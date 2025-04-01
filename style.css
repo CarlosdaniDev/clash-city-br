@@ -13,7 +13,7 @@
     src: (url(fonts/Clash_Bold.otf));
 }
 h2, h1, h3 {
-    font-family: clash, sans-serif;
+    font-family: clash, lexend, serif;
     
 }
 
@@ -147,7 +147,7 @@ aside {
     position: absolute;
     top: 5%;
     left: 5%;
-    width: 22%;
+    width: 35%;
     height: 89%;
 }
 
