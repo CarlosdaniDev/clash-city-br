@@ -10,7 +10,8 @@
 
 @font-face {
     font-family: Clash;
-    src: (url(fonts/Clash_Bold.otf));
+    src: url(fonts/Clash_Bold.otf) format('opentype');
+    font-weight: bold;
 }
 h2, h1, h3 {
     font-family: clash, lexend, serif;
