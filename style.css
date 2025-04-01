@@ -1,0 +1,171 @@
+:root {
+    --cor0: #9F87AF;
+    --cor1: #f0b469;
+    --cor2: #F4FFF8;
+    --cor3: #077187;
+    --cor4: #11032c;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+@font-face {
+    font-family: Clash;
+    src: (url(fonts/Clash_Bold.otf));
+}
+h2, h1, h3 {
+    font-family: clash, sans-serif;
+    
+}
+
+nav {
+    background-color: var(--cor0);
+    
+    text-align: end;
+    gap: 20px;
+    padding: 15px;
+    margin: -8px;
+}
+
+nav>a {
+    font-family: Clash;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.403);
+}
+header {
+    background-image: linear-gradient(to bottom, #9f87af, #077187);
+    margin: -8px;
+    padding: 20px;
+    color: var(--cor2);
+    text-align: center;
+}
+header > h1 {
+    font-family: clash, sans-serif;
+    font-size: 3em;
+    text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.39);
+}
+header > p {
+    font-family: clash, sans-serif;
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.271);
+}
+article {
+    background-image: linear-gradient(to bottom, var(--cor4), var(--cor2));
+    padding-top: 10px;
+    margin: -8px;
+    padding-bottom: 40px;
+}
+article > h2 {
+    font-family: clash, sans-serif;
+    color: var(--cor2);
+    text-align: center;
+}
+article > .clans {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+ 
+   
+
+}
+.clash1, .clash2, .clash3 {
+display: block;
+margin: auto;
+}
+
+.clans img {
+    width: 100px;
+    display: block;
+    margin: auto;
+    
+}
+.clans h3 {
+    color: var(--cor1);
+    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.373);
+}
+.clash1, .clash2, .clash3 {
+    font-family: clash, sans-serif;
+    color: var(--cor4);
+ background-color: var(--cor3);
+ border-radius: 20px;
+ padding: 0px 30px 5px 20px
+
+}
+ul #guerra {
+    list-style-type: '\1F4A5';
+    padding: 5px;
+}
+ul #trofeus {
+    list-style-type: '\1F3C6';
+    padding: 5px;
+}
+ul #controle {
+list-style-type: '\1F3AE';
+padding: 5px;
+}
+.clans button {
+    width: 98%;
+    height: 30px;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+    color: var(--cor2);
+    background-color: var(--cor1);
+    font-family: clash;
+    font-weight: bolder;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.373);
+    font-size: 0.8em;
+}
+.clans button:hover {
+    cursor: pointer;
+    color: var(--cor3);
+    background-color: var(--cor2);
+   
+}
+
+.clans a {
+    text-decoration: none;
+}
+aside {
+    background-image: linear-gradient(to bottom, var(--cor4), var(--cor3));
+    margin: -8px;
+    padding: 10px;
+    padding-bottom: 20px;
+    color: var(--cor2);
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.344);
+}
+.videos {
+    background-color: var(--cor4);
+    margin: 20px 20px 20px 20px;
+    padding-bottom: 30%;
+    position: relative;
+    border-radius: 20px;
+}
+.videos > iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 22%;
+    height: 89%;
+}
+
+footer {
+    background-color:var(--cor0) ;
+    display: flex;
+    margin: -8px;
+    padding: 6PX;
+    gap: 3px;
+    font-family: clash, sans-serif;
+    position: relative;
+    justify-content: center;
+    color: var(--cor2);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.423);
+}
+.social {
+    width: 30px;
+   height: 30px;
+  padding: 3px;
+}
+
