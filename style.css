@@ -9,18 +9,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
 @font-face {
-    font-family: Clash;
+    font-family: 'Clash';
     src: url(fonts/Clash_Bold.otf) format('opentype');
     font-weight: bold;
 }
-h2, h1, h3 {
+
+h2,
+h1,
+h3 {
     font-family: 'clash', 'lexend', serif;
-    
+
 }
 
 nav {
     background-color: var(--cor0);
-    
+    font-family: 'clash' serif;
     text-align: end;
     gap: 20px;
     padding: 15px;
@@ -28,12 +31,13 @@ nav {
 }
 
 nav>a {
-    font-family: Clash;
+    font-family: 'Clash';
     text-decoration: none;
     color: white;
     padding: 10px;
     text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.403);
 }
+
 header {
     background-image: linear-gradient(to bottom, #9f87af, #077187);
     margin: -8px;
@@ -41,70 +45,85 @@ header {
     color: var(--cor2);
     text-align: center;
 }
-header > h1 {
-    font-family: clash, sans-serif;
+
+header>h1 {
+    font-family: 'clash', sans-serif;
     font-size: 3em;
     text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.39);
 }
-header > p {
-    font-family: clash, sans-serif;
+
+header>p {
+    font-family: 'clash';
     text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.271);
 }
+
 article {
     background-image: linear-gradient(to bottom, var(--cor4), var(--cor2));
     padding-top: 10px;
     margin: -8px;
     padding-bottom: 40px;
 }
-article > h2 {
-    font-family: clash, sans-serif;
+
+article>h2 {
+    font-family: 'clash';
     color: var(--cor2);
     text-align: center;
 }
-article > .clans {
+
+article>.clans {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
- 
-   
+    gap: 10px;
+
+
 
 }
-.clash1, .clash2, .clash3 {
-display: block;
-margin: auto;
+
+.clash1,
+.clash2,
+.clash3 {
+    display: block;
+    margin: auto;
 }
 
 .clans img {
     width: 100px;
     display: block;
     margin: auto;
-    
+
 }
+
 .clans h3 {
     color: var(--cor1);
     text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.373);
 }
-.clash1, .clash2, .clash3 {
-    font-family: clash, sans-serif;
-    color: var(--cor4);
- background-color: var(--cor3);
- border-radius: 20px;
- padding: 0px 30px 5px 20px
 
+.clash1,
+.clash2,
+.clash3 {
+    font-family: 'clash';
+    color: var(--cor4);
+    background-color: var(--cor3);
+    border-radius: 20px;
+    padding: 0px 30px 5px 20px
 }
+
 ul #guerra {
     list-style-type: '\1F4A5';
     padding: 5px;
 }
+
 ul #trofeus {
     list-style-type: '\1F3C6';
     padding: 5px;
 }
+
 ul #controle {
-list-style-type: '\1F3AE';
-padding: 5px;
+    list-style-type: '\1F3AE';
+    padding: 5px;
 }
+
 .clans button {
     width: 98%;
     height: 30px;
@@ -118,16 +137,18 @@ padding: 5px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.373);
     font-size: 0.8em;
 }
+
 .clans button:hover {
     cursor: pointer;
     color: var(--cor3);
     background-color: var(--cor2);
-   
+
 }
 
 .clans a {
     text-decoration: none;
 }
+
 aside {
     background-image: linear-gradient(to bottom, var(--cor4), var(--cor3));
     margin: -8px;
@@ -137,6 +158,7 @@ aside {
     text-align: center;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.344);
 }
+
 .videos {
     background-color: var(--cor4);
     margin: 20px 20px 20px 20px;
@@ -144,16 +166,17 @@ aside {
     position: relative;
     border-radius: 20px;
 }
-.videos > iframe {
+
+.videos>iframe {
     position: absolute;
     top: 5%;
     left: 5%;
-    width: 35%;
+    width: 45%;
     height: 89%;
 }
 
 footer {
-    background-color:var(--cor0) ;
+    background-color: var(--cor0);
     display: flex;
     margin: -8px;
     padding: 6PX;
@@ -164,12 +187,13 @@ footer {
     color: var(--cor2);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.423);
 }
+
 .social {
     width: 30px;
-   height: 30px;
-  padding: 3px;
+    height: 30px;
+    padding: 3px;
 }
+
 .barbaro {
     width: 220px;
 }
-
