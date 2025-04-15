@@ -27,7 +27,7 @@ nav {
     text-align: end;
     gap: 20px;
     padding: 15px;
-    margin: -8px;
+
 }
 
 nav>a {
@@ -40,10 +40,17 @@ nav>a {
 
 header {
     background-image: linear-gradient(to bottom, #9f87af, #077187);
-    margin: -8px;
-    padding: 35px;
+   margin: 0;
+    padding: 0px;
     color: var(--cor2);
     text-align: center;
+    width: 100%;
+    overflow-x: hidden;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0px;
 }
 
 header>h1 {
@@ -60,7 +67,7 @@ header>p {
 article {
     background-image: linear-gradient(to bottom, var(--cor4), var(--cor2));
     padding-top: 10px;
-    margin: -8px;
+    
     padding-bottom: 40px;
 }
 
@@ -151,7 +158,7 @@ ul #controle {
 
 aside {
     background-image: linear-gradient(to bottom, var(--cor4), var(--cor3));
-    margin: -8px;
+    
     padding: 10px;
     padding-bottom: 20px;
     color: var(--cor2);
@@ -165,20 +172,23 @@ aside {
     padding-bottom: 30%;
     position: relative;
     border-radius: 20px;
+    height: 40vh;
 }
 
-.videos>iframe {
+
+.videos > iframe {
     position: absolute;
-    top: 5%;
-    left: 5%;
-    width: 45%;
-    height: 89%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 90%;
 }
 
 footer {
     background-color: var(--cor0);
     display: flex;
-    margin: -8px;
+   
     padding: 6PX;
     gap: 3px;
     font-family: clash, sans-serif;
@@ -195,5 +205,5 @@ footer {
 }
 
 .barbaro {
-    width: 220px;
+    width: 20vw;
 }
