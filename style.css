@@ -86,11 +86,12 @@ article>h2 {
 }
 
 article>.clans {
-    padding: 20px;
+    padding: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
+    
 }
 
 .clash1,
@@ -98,6 +99,7 @@ article>.clans {
 .clash3 {
     display: block;
     width: 60vw;
+
 }
 
 .clans img {
@@ -114,6 +116,7 @@ article>.clans {
 }
 .clans p {
   padding: 10px;
+  
 }
 
 .clash1,
@@ -130,16 +133,19 @@ article>.clans {
 ul #guerra {
     list-style-type: '\1F4A5';
     padding: 5px;
+    margin-left: 10px;
 }
 
 ul #trofeus {
     list-style-type: '\1F3C6';
     padding: 5px;
+     margin-left: 10px;
 }
 
 ul #controle {
     list-style-type: '\1F3AE';
     padding: 5px;
+     margin-left: 10px;
 }
 
 .clans button {
@@ -215,7 +221,9 @@ footer > p {
     box-sizing: border-box;
     padding: 5px;
     border-radius: 50%;
-
+}
+h2#formulario {
+display: none;
 }
 
 form {
@@ -223,7 +231,7 @@ form {
     width: 300px;
     margin: auto;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
+    display: none;
 }
 
 #botao {
