@@ -32,7 +32,6 @@ nav {
     font-family: 'clash' serif;
     text-align: end;
     padding: 10px;
-
 }
 
 nav>a {
@@ -92,19 +91,13 @@ article>.clans {
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-
-
-
-
 }
 
 .clash1,
 .clash2,
 .clash3 {
     display: block;
-    width: 50vw;
-    
-    
+    width: 60vw;
 }
 
 .clans img {
@@ -118,6 +111,9 @@ article>.clans {
     padding: 10px;
     color: var(--cor1);
     text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.373);
+}
+.clans p {
+  padding: 10px;
 }
 
 .clash1,
