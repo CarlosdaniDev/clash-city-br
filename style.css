@@ -28,7 +28,7 @@ h3 {
 }
 
 nav {
-    background-color: #040A12;
+    background-color: var(--cor4);
     font-family: 'clash' serif;
     text-align: end;
     padding: 10px;
@@ -45,7 +45,10 @@ nav>a {
 
 header {
     background-image: linear-gradient(to bottom, #9f87af, #077187);
-    background-image: url(Imagens/wallclas.jpg);
+    background-image: url(Imagens/clashfundo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     margin: 0;
     padding: 10px;
     color: var(--cor2);
@@ -65,6 +68,7 @@ header>h1 {
     font-size: 2.5em;
     text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.39);
     padding: 20px;
+    text-shadow: 1px 1px 1px black;
 }
 
 header>p {
@@ -72,6 +76,7 @@ header>p {
     text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.271);
     padding: 10px;
     width: 90vw;
+    text-shadow: 1px 1px 2px black;
 }
 
 article {
@@ -92,7 +97,7 @@ article>.clans {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    
+
 }
 
 .clash1,
@@ -100,6 +105,7 @@ article>.clans {
 .clash3 {
     display: block;
     width: 60vw;
+
 
 }
 
@@ -113,11 +119,12 @@ article>.clans {
 .clans h3 {
     padding: 10px;
     color: var(--cor1);
-    text-shadow: 1px 2px 2px rgba(0, 0, 0, 0.373);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.715);
 }
+
 .clans p {
-  padding: 10px;
-  
+    padding: 10px;
+    color: var(--cor4);
 }
 
 .clash1,
@@ -125,10 +132,10 @@ article>.clans {
 .clash3 {
     font-family: 'clash';
     color: var(--cor4);
-    background-color: var(--cor3);
+    background-color: var(--cor2);
     border-radius: 20px;
     padding: 20px;
-    
+
 }
 
 ul #guerra {
@@ -140,13 +147,13 @@ ul #guerra {
 ul #trofeus {
     list-style-type: '\1F3C6';
     padding: 5px;
-     margin-left: 10px;
+    margin-left: 10px;
 }
 
 ul #controle {
     list-style-type: '\1F3AE';
     padding: 5px;
-     margin-left: 10px;
+    margin-left: 10px;
 }
 
 .clans button {
@@ -213,7 +220,8 @@ footer {
     color: var(--cor2);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.423);
 }
-footer > p {
+
+footer>p {
     padding: 15px;
 }
 
@@ -223,8 +231,9 @@ footer > p {
     padding: 5px;
     border-radius: 50%;
 }
+
 h2#formulario {
-display: none;
+    display: none;
 }
 
 form {
