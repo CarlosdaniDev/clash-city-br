@@ -37,8 +37,12 @@ article >.clans {
 
 @media only screen and (min-width: 992px) {
    header{
-    height: 80vh;
+    height: 70vh;
    } 
+   header > p#junte {
+    font-size: 1.8em;
+    padding: 100px;
+   }
    article >.clans {
     margin: auto;
     width: 40vw;
