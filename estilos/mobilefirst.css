@@ -87,6 +87,8 @@ header>p {
 article {
     background-image: linear-gradient(to bottom, var(--cor4), var(--cor2));
     padding: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 
 }
 
@@ -94,6 +96,9 @@ article>h2 {
     font-family: 'clash';
     color: var(--cor2);
     text-align: center;
+    padding-bottom: 40px;
+  
+  
 }
 
 article>.clans {
@@ -194,6 +199,7 @@ aside {
      background-position: left;
 
     padding: 10px;
+    padding-top: 40px;
     padding-bottom: 20px;
     color: var(--cor2);
     text-align: center;
