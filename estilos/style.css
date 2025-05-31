@@ -4,8 +4,18 @@
     
 header {
     height: 50vh;
-
 }
+header > p {
+    padding: 20px;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+.clash1,.clash2,.clash3 {
+width: 40vw;
+}
+
+
 }
 
 
@@ -16,6 +26,6 @@ header {
 
 @media only screen and (min-width: 992px) {
    header{
-    height: 70vh;
+    height: 90vh;
    } 
 }
