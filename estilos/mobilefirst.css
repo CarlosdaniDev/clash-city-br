@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 :root {
     --cor0: #9F87AF;
     --cor1: #f0b469;
@@ -28,7 +30,7 @@ h3 {
 }
 
 nav {
-    background-color: var(--cor4);
+    background-color: black;
     font-family: 'clash' serif;
     text-align: end;
     padding: 10px;
@@ -211,7 +213,7 @@ aside {
 }
 
 footer {
-    background-color: var(--cor4);
+    background-color: black;
     display: flex;
     gap: 3px;
     font-family: clash, sans-serif;
