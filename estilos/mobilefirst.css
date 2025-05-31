@@ -52,7 +52,6 @@ header {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-attachment:  scroll;
     margin: 0;
     padding: 10px;
     color: var(--cor2);

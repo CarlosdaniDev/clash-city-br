@@ -7,6 +7,7 @@ body {
 }
 header {
     height: 80vh;
+  padding: 40px;
 }
 header > p {
     padding: 20px;
