@@ -1,18 +1,28 @@
 @charset "UTF-8";
 
 @media only screen and (min-width:601px) {
+body {
+    margin: 0px;
     
+}
 header {
-    height: 50vh;
+    height: 80vh;
 }
 header > p {
     padding: 20px;
     font-size: 1.2em;
     margin-top: 20px;
 }
-
+header > #junte {
+    margin-top: 40px;
+}
+article >.clans {
+    margin: auto;
+    width: 40vw;
+}
 .clash1,.clash2,.clash3 {
-width: 40vw;
+
+   width: 40vw;
 }
 
 
@@ -26,6 +36,14 @@ width: 40vw;
 
 @media only screen and (min-width: 992px) {
    header{
-    height: 90vh;
+    height: 80vh;
    } 
+   article >.clans {
+    margin: auto;
+    width: 40vw;
+}
+.clash1,.clash2,.clash3 {
+
+   width: 30vw;
+}
 }

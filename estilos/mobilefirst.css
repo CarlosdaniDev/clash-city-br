@@ -52,6 +52,7 @@ header {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-attachment:  scroll;
     margin: 0;
     padding: 10px;
     color: var(--cor2);
@@ -61,7 +62,8 @@ header {
 
 html,
 body {
-    height: 100%;
+  
+
     margin: 0px;
     padding: 0px;
 }
@@ -76,10 +78,11 @@ header>h1 {
 
 header>p {
     font-family: 'clash';
-    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.271);
+    text-shadow: 1px 1px 2px rgb(0, 0, 0);
     padding: 10px;
-    width: 90vw;
-    text-shadow: 1px 1px 2px black;
+    width: 70vw;
+    margin: auto;
+   
 }
 
 article {
@@ -185,7 +188,11 @@ ul #controle {
 }
 
 aside {
-    background-image: linear-gradient(to bottom, var(--cor4), var(--cor3));
+      background-image: linear-gradient(to bottom, var(--cor4), var(--cor3));
+     background-image: url(Imagens/fundo1.jpg);
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: left;
 
     padding: 10px;
     padding-bottom: 20px;
@@ -195,7 +202,7 @@ aside {
 }
 
 .videos {
-    background-color: var(--cor4);
+    
     margin: 20px 20px 20px 20px;
     padding-bottom: 30%;
     position: relative;
