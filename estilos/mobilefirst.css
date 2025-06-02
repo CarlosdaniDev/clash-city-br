@@ -102,7 +102,7 @@ article>h2 {
 }
 
 article>.clans {
-    padding: 10px;
+    padding: 0px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
