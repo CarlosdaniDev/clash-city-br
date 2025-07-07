@@ -1,4 +1,10 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@font-face {
+    font-family: 'Clash';
+    src: url(fonts/Clash_Bold.otf) format('opentype');
+    font-weight: bold;
+}
 
 :root {
     --cor0: #9F87AF;
@@ -12,15 +18,6 @@
     padding: 0px;
     margin: 0px;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
-
-@font-face {
-    font-family: 'Clash';
-    src: url(fonts/Clash_Bold.otf) format('opentype');
-    font-weight: bold;
-}
-
 
 h2,
 h1,
@@ -228,18 +225,31 @@ aside {
 footer {
     background-color: black;
     display: flex;
-    gap: 3px;
+    gap: 2px;
     font-family: clash, sans-serif;
     position: relative;
     justify-content: center;
     color: var(--cor2);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.423);
+    align-items: center;
 }
 
 footer>p {
-    padding: 15px;
+    padding: 10px;
+    font-size: 8pt;
 }
-
+footer a {
+    text-decoration: none;
+    color: white;
+   padding: 2px;
+   font-size: 6pt;
+  
+}
+#linksf {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
 .social {
     width: 40px;
     box-sizing: border-box;
@@ -280,3 +290,24 @@ form {
 footer>a>img:hover {
     transform: translate(-2px, -2px);
 }
+
+#yt-feed {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .yt-card {
+    text-decoration: none;
+    color: white;
+    width: 200px;
+  }
+  .yt-card img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  .yt-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 8px;
+  }

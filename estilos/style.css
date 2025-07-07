@@ -27,9 +27,47 @@ article >.clans {
 }
 
 
+
 }
 
+@media only screen and (min-width: 891px) {
+   header{
+    height: 70vh;
+   } 
+   header > p#junte {
+    font-size: 1.8em;
+    padding: 100px;
+   }
+   article >.clans {
+    margin: auto;
+    width: 30vw;
+}
+.clash1,.clash2,.clash3 {
 
+   width: 30vw;
+}
+
+#yt-feed {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .yt-card {
+    text-decoration: none;
+    color: white;
+    width: 350px;
+  }
+  .yt-card img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  .yt-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 8px;
+  }
+}
 
 
 
@@ -51,4 +89,65 @@ article >.clans {
 
    width: 30vw;
 }
+
+#yt-feed {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .yt-card {
+    text-decoration: none;
+    color: white;
+    width: 350px;
+  }
+  .yt-card img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  .yt-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 8px;
+  }
+}
+@media only screen and (min-width: 1523px) {
+   header{
+    height: 70vh;
+   } 
+   header > p#junte {
+    font-size: 1.8em;
+    padding: 100px;
+   }
+   article >.clans {
+    margin: auto;
+    width: 30vw;
+}
+.clash1,.clash2,.clash3 {
+
+   width: 30vw;
+}
+.videos {
+    padding-bottom: 20px;
+}
+#yt-feed {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .yt-card {
+    text-decoration: none;
+    color: white;
+    width: 350px;
+  }
+  .yt-card img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  .yt-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 8px;
+  }
 }

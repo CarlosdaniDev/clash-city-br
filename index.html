@@ -71,41 +71,46 @@
     <aside>
         <h2>Vídeos em Destaque</h2>
         <div class="videos">
- <iframe width="460" height="315" src="https://www.youtube.com/embed/_bhMYL484us?si=cTJHOS0NGEPly55p"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+       <div id="yt-feed">Carregando vídeos...</div>
+
+<script>
+(async () => {
+  const API_KEY = 'AIzaSyAWy3Q4h0Eh245q6lk3kP5ZRiNaM5Dift8';
+  const uploadsPlaylist = 'UUgkNsyyubsCR4GRWI0Mw5yQ';
+  const MAX = 4;
+
+  const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${uploadsPlaylist}&maxResults=${MAX}&key=${API_KEY}`;
+  const res = await fetch(url);
+  const data = await res.json();
+
+  const feed = document.getElementById('yt-feed');
+
+  if (!data.items) {
+    feed.textContent = 'Erro ao carregar vídeos.';
+    console.error(data);
+    return;
+  }
+
+  feed.innerHTML = data.items.map(item => {
+    const id = item.snippet.resourceId.videoId;
+    const title = item.snippet.title;
+    const thumb = item.snippet.thumbnails.medium.url;
+    return `
+      <a href="https://youtube.com/watch?v=${id}" target="_blank" class="yt-card">
+        <img src="${thumb}" alt="${title}">
+        <div class="yt-title">${title}</div>
+      </a>
+    `;
+  }).join('');
+})();
+</script>
+
         </div>
-        <h2 id="formulario">Entre em Contato</h2>
-        <form action="#" method="post" autocomplete="on">
-
-            <p>
-                <label for="inome">Nome:</label>
-                <input type="text" name="nome" id="inome" maxlength="15" required placeholder="Digite seu nickname">
-            </p>
-            <p>
-                <label for="iemail">E-mail:</label>
-                <input type="email" name="email" id="iemail" required placeholder="Digite seu gmail">
-            </p>
-            <p>
-                <label for="imens">Mensagem:</label><br>
-                <textarea name="mens" id="imens" cols="28" rows="5" required maxlength="300">
-
-                   </textarea>
-            </p>
-            <p>
-                <input type="submit" value="Enviar" id="botao">
-                <input type="reset" value="Limpar" id="botao">
-            </p>
-
-
-
-        </form>
-
+       
         <img class="barbaro" src="estilos/Imagens/Perfil_COC-removebg-preview.png" alt="barbaro">
     </aside>
     <footer id="rodape">
-        <p>Família Clash City BR</p>
+        <p>© 2025 Clash City BR</p>
         <a href="https://wa.me/31995312787" target="_blank"><img class="social" src="estilos/Imagens/whatsapp.png"
                 alt="wpp"></a>
         <a href="https://www.instagram.com/clashcitybr/" target="_blank"><img class="social" src="estilos/Imagens/Instagram_icon.png"
@@ -113,7 +118,14 @@
         <a href="https://www.youtube.com/@clashcitybr/videos" target="_blank"><img class="social"
                 src="estilos/Imagens/youtube-logo-youtube-logo-transparent-youtube-icon-transparent-free-free-png.webp"
                 alt="youtube"></a>
+                <div id="linksf">
+                    <p><a href="privacidade.html" target="_blank">Politíca de Privacidade</a></p>
+                    <p><a href="termos.html" target="_blank">Termos de Uso</a></p>
+                </div>
     </footer>
+    <script>
+
+    </script>
 
 
 </body>
