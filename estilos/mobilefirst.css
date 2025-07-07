@@ -275,14 +275,14 @@ footer>a>img:hover {
   .yt-card {
     text-decoration: none;
     color: white;
-    width: 110px;
+    width: 120px;
   }
   .yt-card img {
     width: 100%;
     border-radius: 8px;
   }
   .yt-title {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     margin-top: 8px;
   }
