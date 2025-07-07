@@ -257,31 +257,6 @@ footer a {
     border-radius: 50%;
 }
 
-h2#formulario {
-    display: none;
-}
-
-form {
-    padding: 5px;
-    width: 300px;
-    margin: auto;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    display: none;
-}
-
-#botao {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    border-radius: 10px;
-    width: 80px;
-    height: 30px;
-    background-color: #f0b469;
-    color: white;
-}
-
-#botao:hover {
-    color: black;
-    background-color: var(--cor2);
-}
 
 .barbaro {
     width: 20vw;
