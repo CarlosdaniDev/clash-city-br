@@ -268,7 +268,7 @@ footer>a>img:hover {
 
 #yt-feed {
     display: flex;
-    gap: 6px;
+    gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
   }
