@@ -5,6 +5,18 @@ body {
     margin: 0px;
     
 }
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 header {
     height: 80vh;
   padding: 40px;
@@ -17,12 +29,13 @@ header > p {
 header > #junte {
     margin-top: 40px;
 }
+
 article >.clans {
     margin: auto;
     width: 40vw;
 }
 .clash1,.clash2,.clash3 {
-
+ transition: transform 0.3s ease, box-shadow 0.3s ease;
    width: 40vw;
 }
 
@@ -31,6 +44,35 @@ article >.clans {
     color: white;
     width: 200px;
   }
+
+button {
+    transition: transform 0.2s, background 0.2s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: #ffd34c;
+}
+.scroll-anim {
+    opacity: 0;
+    --scroll-tr: translateY(40px);
+    --hover-scale: scale(1);
+    transform: var(--scroll-tr) var(--hover-scale);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-anim.show {
+    opacity: 1;
+    --scroll-tr: translateY(0);
+}
+
+.clash1:hover, .clash2:hover, .clash3:hover {
+    --hover-scale: scale(1.03);
+    transform: translateY(-10px) var(--hover-scale);
+    cursor: pointer;
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.4);
+}
+
 
 }
 
@@ -127,9 +169,8 @@ article >.clans {
     margin: auto;
     width: 30vw;
 }
-.clash1,.clash2,.clash3 {
-
-   width: 30vw;
+.clash1, .clash2, .clash3 {
+  width: 30vw;
 }
 .videos {
     padding-bottom: 20px;

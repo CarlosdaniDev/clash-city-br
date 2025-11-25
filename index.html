@@ -20,19 +20,20 @@
         <a href="#rodape">Contato</a>
     </nav>
     <header>
-        <h1>Bem vindo a Família Clash City BR</h1>
-        <p>No CLASH CITY BR, a união faz a força! Aqui, amizade e evolução andam lado a lado, tornando cada batalha mais
+       <h1 class="fade-up">Bem vindo a Família Clash City BR</h1>
+
+        <p class="fade-up">No CLASH CITY BR, a união faz a força! Aqui, amizade e evolução andam lado a lado, tornando cada batalha mais
             épica.</p>
-        <p id="junte">Junte-se a nós e cresça junto com o clã!</p>
+        <p class="fade-up" id="junte">Junte-se a nós e cresça junto com o clã!</p>
 
     </header>
     <article>
-        <h2 id="clans">Nossos Clãs</h2>
+        <h2 id="clans" class="scroll-anim">Nossos Clãs</h2>
         <div class="clans">
-            <div class="clash1">
+            <div class="clash1 scroll-anim">
                 <h3>CLASH CITY BR</h3>
                 <img src="estilos/Imagens/Clashcity.png" alt="clashcitybr">
-                <p>Clã principal - Nível 20</p>
+                <p>Clã principal - Nível 21</p>
                 <ul>
                     <li id="trofeus">Troféus mínimos: 2000</li>
                     <li id="guerra">Guerra frequente</li>
@@ -41,7 +42,7 @@
                 <a href="https://link.clashofclans.com/pt?action=OpenClanProfile&tag=GUPJU0L2"
                     target="_blank"><button>Solicitar Entrada</button></a>
             </div>
-            <div class="clash2">
+            <div class="clash2 scroll-anim">
                 <h3>CLASH CITY BR 2</h3>
                 <img src="estilos/Imagens/clashcitybr2.png" alt="clashcitybr2">
                 <p>Clã secundário - Nível 10</p>
@@ -53,7 +54,7 @@
                 <a href="https://link.clashofclans.com/pt?action=OpenClanProfile&tag=2LQY9RYV0"
                     target="_blank"><button>Solicitar Entrada</button></a>
             </div>
-            <div class="clash3">
+            <div class="clash3 scroll-anim">
                 <h3>CLASH CITY BR 3</h3>
                 <img src="estilos/Imagens/clashcitybr2.png" alt="clashcitybr3">
                 <p>Clã terciário - Nível 10</p>
@@ -69,8 +70,8 @@
     </article>
 
     <aside>
-        <h2>Vídeos em Destaque</h2>
-        <div class="videos">
+        <h2 class="scroll-anim">Vídeos em Destaque</h2>
+        <div class="videos" class="videos scroll-anim">
        <div id="yt-feed">Carregando vídeos...</div>
 
 <script>
@@ -106,8 +107,8 @@
 </script>
 
         </div>
-       
-        <img class="barbaro" src="estilos/Imagens/Perfil_COC-removebg-preview.png" alt="barbaro">
+       <img src="estilos/Imagens/capalogo.png" alt="">
+    
     </aside>
     <footer id="rodape">
         <p>© 2025 Clash City BR</p>
@@ -125,6 +126,19 @@
                 </div>
     </footer>
     <script>
+
+const items = document.querySelectorAll('.scroll-anim');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+items.forEach(el => observer.observe(el));
 
     </script>
 
