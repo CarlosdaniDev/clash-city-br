@@ -1,10 +1,15 @@
 @charset "UTF-8";
 
-@media only screen and (min-width:601px) {
+/* ============================
+   TELAS GRANDES (a partir de 601px)
+============================ */
+@media only screen and (min-width: 601px) {
+
 body {
-    margin: 0px;
-    
+    margin: 0;
 }
+
+/* Fade padrão */
 .fade-up {
     opacity: 0;
     transform: translateY(30px);
@@ -17,34 +22,37 @@ body {
         transform: translateY(0);
     }
 }
+
 header {
     height: 80vh;
-  padding: 40px;
+    padding: 40px;
 }
+
 header > p {
     padding: 20px;
     font-size: 1.2em;
     margin-top: 20px;
 }
+
 header > #junte {
     margin-top: 40px;
 }
 
-article >.clans {
+/* Clans */
+article > .clans {
     margin: auto;
     width: 40vw;
-}
-.clash1,.clash2,.clash3 {
- transition: transform 0.3s ease, box-shadow 0.3s ease;
-   width: 40vw;
+    margin-top: 20px;
+    margin-bottom: 50px;
 }
 
- .yt-card {
-    text-decoration: none;
-    color: white;
-    width: 200px;
-  }
+.clash1, .clash2, .clash3 {
+    width: 40vw;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+/* Botões */
 button {
     transition: transform 0.2s, background 0.2s;
 }
@@ -53,6 +61,8 @@ button:hover {
     transform: scale(1.1);
     background: #ffd34c;
 }
+
+/* Scroll Anim */
 .scroll-anim {
     opacity: 0;
     --scroll-tr: translateY(40px);
@@ -66,133 +76,283 @@ button:hover {
     --scroll-tr: translateY(0);
 }
 
+/* Hover Clans */
 .clash1:hover, .clash2:hover, .clash3:hover {
     --hover-scale: scale(1.03);
     transform: translateY(-10px) var(--hover-scale);
     cursor: pointer;
     box-shadow: 0px 10px 20px rgba(0,0,0,0.4);
 }
+#videosdestaque {
+  font-size: 2em;
+  padding: 20px;
+  margin-bottom: 70px;
+}
+/* ============================
+   EFEITO MODERNO DO YT
+============================ */
+
+/* Estado inicial */
+.yt-card {
+    text-decoration: none;
+    color: white;
+    width: 200px;
+
+    opacity: 0;
+    transform: scale(0.85);
+    filter: blur(10px);
+
+    border-radius: 14px;
+    overflow: hidden;
+
+    transition:
+        opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 0.9s ease;
+}
+
+/* Quando o JS adiciona .show */
+.yt-card.show {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+}
+
+/* Hover */
+.yt-card:hover {
+    transform: scale(1.07);
+    box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.45);
+    border-radius: 18px;
+}
+
+/* Imagem */
+.yt-card img {
+    width: 100%;
+    display: block;
+}
+
+/* Título */
+.yt-title {
+    padding: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+}
+/* ===== SEÇÃO SOBRE O CLÃ ===== */
+#sobre-clan {
+
+    width: 100%;
+    max-width: 1100px;
+    margin: 120px auto;
+    padding: 45px 30px;
+
+    background: rgba(0, 0, 0, 0.45);
+    border-radius: 22px;
+    position: relative;
+
+    border: 2px solid rgba(0, 150, 255, 0.6);
+    box-shadow:
+        0 0 20px rgba(0, 150, 255, 0.5),
+        inset 0 0 15px rgba(0, 150, 255, 0.2);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    animation: neonPulse 3.5s infinite ease-in-out;
+
+    text-align: center;
+
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+#sobre-clan.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Título */
+#sobre-clan h2 {
+    color: #f9f9f9;
+    font-size: 2.4em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px #00a8ff;
+margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+/* Ícone do título */
+#sobre-clan h2::before {
+    content: "⚔️";
+    font-size: 1.1em;
+}
+
+/* Texto */
+#sobre-clan p {
+    color: #ffffff;
+    font-size: 1.15em;
+    line-height: 1.75em;
+    margin-bottom: 18px;
+    text-shadow: 0 0 4px black;
+}
+
+/* Pulse neon */
+@keyframes neonPulse {
+    0%, 100% {
+        box-shadow:
+            0 0 20px rgba(0, 150, 255, 0.5),
+            inset 0 0 15px rgba(0, 150, 255, 0.2);
+    }
+    50% {
+        box-shadow:
+            0 0 30px rgba(0, 150, 255, 0.9),
+            inset 0 0 22px rgba(0, 150, 255, 0.4);
+    }
 
 
 }
 
+/* ============================
+   891px+
+============================ */
 @media only screen and (min-width: 891px) {
-   header{
+
+header {
     height: 70vh;
-   } 
-   header > p#junte {
+}
+
+header > p#junte {
     font-size: 1.8em;
     padding: 100px;
-   }
-   article >.clans {
-    margin: auto;
+}
+
+article > .clans {
     width: 30vw;
 }
-.clash1,.clash2,.clash3 {
 
-   width: 30vw;
-}
-
-#yt-feed {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .yt-card {
-    text-decoration: none;
-    color: white;
-    width: 350px;
-  }
-  .yt-card img {
-    width: 100%;
-    border-radius: 8px;
-  }
-  .yt-title {
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 4px;
-  }
-}
-
-
-
-
-
-@media only screen and (min-width: 992px) {
-   header{
-    height: 70vh;
-   } 
-   header > p#junte {
-    font-size: 1.8em;
-    padding: 100px;
-   }
-   article >.clans {
-    margin: auto;
-    width: 30vw;
-}
-.clash1,.clash2,.clash3 {
-
-   width: 30vw;
-}
-
-#yt-feed {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .yt-card {
-    text-decoration: none;
-    color: white;
-    width: 350px;
-  }
-  .yt-card img {
-    width: 100%;
-    border-radius: 8px;
-  }
-  .yt-title {
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 4px;
-  }
-}
-@media only screen and (min-width: 1523px) {
-   header{
-    height: 70vh;
-   } 
-   header > p#junte {
-    font-size: 1.8em;
-    padding: 100px;
-   }
-   article >.clans {
-    margin: auto;
-    width: 30vw;
-}
 .clash1, .clash2, .clash3 {
-  width: 30vw;
+    width: 30vw;
 }
+
+/* Feed YT */
+#yt-feed {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.yt-card {
+    width: 350px;
+}
+
+.yt-card img {
+    border-radius: 8px;
+}
+
+.yt-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 4px;
+}
+
+}
+
+/* ============================
+   992px+
+============================ */
+@media only screen and (min-width: 992px) {
+
+header {
+    height: 70vh;
+}
+
+header > p#junte {
+    font-size: 1.8em;
+    padding: 100px;
+}
+
+article > .clans {
+    width: 30vw;
+}
+
+.clash1, .clash2, .clash3 {
+    width: 30vw;
+}
+
+#yt-feed {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.yt-card {
+    width: 350px;
+}
+
+.yt-card img {
+    border-radius: 8px;
+}
+
+.yt-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 4px;
+}
+
+}
+
+/* ============================
+   1523px+
+============================ */
+@media only screen and (min-width: 1523px) {
+
+header {
+    height: 70vh;
+}
+
+header > p#junte {
+    font-size: 1.8em;
+    padding: 100px;
+}
+
+article > .clans {
+    width: 30vw;
+}
+
+.clash1, .clash2, .clash3 {
+    width: 30vw;
+}
+
 .videos {
     padding-bottom: 20px;
 }
+
 #yt-feed {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
     justify-content: center;
-  }
-  .yt-card {
-    text-decoration: none;
-    color: white;
+}
+
+.yt-card {
     width: 350px;
-  }
-  .yt-card img {
-    width: 100%;
+}
+
+.yt-card img {
     border-radius: 8px;
-  }
-  .yt-title {
+}
+
+.yt-title {
     font-size: 16px;
     font-weight: bold;
     margin-top: 4px;
-  }
+}
+
+}
 }

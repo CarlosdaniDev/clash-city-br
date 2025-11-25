@@ -5,145 +5,195 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Família Clash City BR</title>
+
     <link rel="shortcut icon" href="estilos/Imagens/Perfil_COC-removebg-preview.png" type="image/x-icon">
     <link rel="stylesheet" href="estilos/mobilefirst.css">
-    <link rel="stylesheet" href="estilos/style.css" media="screen">
+    <link rel="stylesheet" href="estilos/style.css">
     <link rel="stylesheet" href="estilos/paisagem.css" media="screen and (orientation: landscape)">
-
 </head>
 
 <body>
 
     <nav>
-
         <a href="#clans">Nossos Clãs</a>
         <a href="#rodape">Contato</a>
     </nav>
+
     <header>
-       <h1 class="fade-up">Bem vindo a Família Clash City BR</h1>
+        <h1 class="fade-up">Bem vindo à Família Clash City BR</h1>
 
-        <p class="fade-up">No CLASH CITY BR, a união faz a força! Aqui, amizade e evolução andam lado a lado, tornando cada batalha mais
-            épica.</p>
-        <p class="fade-up" id="junte">Junte-se a nós e cresça junto com o clã!</p>
+        <p class="fade-up">
+            No CLASH CITY BR, a união faz a força! Aqui, amizade e evolução andam lado a lado,
+            tornando cada batalha mais épica.
+        </p>
 
+        <p id="junte" class="fade-up">
+            Junte-se a nós e cresça junto com o clã!
+        </p>
     </header>
+
     <article>
         <h2 id="clans" class="scroll-anim">Nossos Clãs</h2>
+
         <div class="clans">
+
             <div class="clash1 scroll-anim">
                 <h3>CLASH CITY BR</h3>
-                <img src="estilos/Imagens/Clashcity.png" alt="clashcitybr">
+                <img src="estilos/Imagens/Clashcity.png" alt="Clã Clash City BR">
                 <p>Clã principal - Nível 21</p>
+
                 <ul>
                     <li id="trofeus">Troféus mínimos: 2000</li>
                     <li id="guerra">Guerra frequente</li>
                     <li id="controle">Jogadores ativos</li>
                 </ul>
-                <a href="https://link.clashofclans.com/pt?action=OpenClanProfile&tag=GUPJU0L2"
-                    target="_blank"><button>Solicitar Entrada</button></a>
+
+                <a href="https://link.clashofclans.com/pt?action=OpenClanProfile&tag=GUPJU0L2" target="_blank">
+                    <button>Solicitar Entrada</button>
+                </a>
             </div>
+
             <div class="clash2 scroll-anim">
                 <h3>CLASH CITY BR 2</h3>
-                <img src="estilos/Imagens/clashcitybr2.png" alt="clashcitybr2">
+                <img src="estilos/Imagens/clashcitybr2.png" alt="Clã Clash City BR 2">
                 <p>Clã secundário - Nível 10</p>
+
                 <ul>
                     <li id="trofeus">Troféus mínimos: 1000</li>
                     <li id="guerra">Guerra frequente</li>
                     <li id="controle">Foco em desenvolvimento</li>
                 </ul>
-                <a href="https://link.clashofclans.com/pt?action=OpenClanProfile&tag=2LQY9RYV0"
-                    target="_blank"><button>Solicitar Entrada</button></a>
+
+                <a href="https://link.clashofclans.com/pt?action=OpenClanProfile&tag=2LQY9RYV0" target="_blank">
+                    <button>Solicitar Entrada</button>
+                </a>
             </div>
+
             <div class="clash3 scroll-anim">
                 <h3>CLASH CITY BR 3</h3>
-                <img src="estilos/Imagens/clashcitybr2.png" alt="clashcitybr3">
+                <img src="estilos/Imagens/clashcitybr2.png" alt="Clã Clash City BR 3">
                 <p>Clã terciário - Nível 10</p>
+
                 <ul>
                     <li id="trofeus">Troféus mínimos: 800</li>
                     <li id="guerra">Guerra frequente</li>
                     <li id="controle">Aberto a novatos</li>
                 </ul>
-                <a href="https://link.clashofclans.com/pt?action=OpenClanProfile&tag=2JY8QGQC8"
-                    target="_blank"><button>Solicitar Entrada</button></a>
+
+                <a href="https://link.clashofclans.com/pt?action=OpenClanProfile&tag=2JY8QGQC8" target="_blank">
+                    <button>Solicitar Entrada</button>
+                </a>
             </div>
+
         </div>
     </article>
 
     <aside>
-        <h2 class="scroll-anim">Vídeos em Destaque</h2>
-        <div class="videos" class="videos scroll-anim">
-       <div id="yt-feed">Carregando vídeos...</div>
+        <h2 class="scroll-anim" id="videosdestaque">Vídeos em Destaque</h2>
 
-<script>
-(async () => {
-  const API_KEY = 'AIzaSyAWy3Q4h0Eh245q6lk3kP5ZRiNaM5Dift8';
-  const uploadsPlaylist = 'UUgkNsyyubsCR4GRWI0Mw5yQ';
-  const MAX = 4;
-
-  const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${uploadsPlaylist}&maxResults=${MAX}&key=${API_KEY}`;
-  const res = await fetch(url);
-  const data = await res.json();
-
-  const feed = document.getElementById('yt-feed');
-
-  if (!data.items) {
-    feed.textContent = 'Erro ao carregar vídeos.';
-    console.error(data);
-    return;
-  }
-
-  feed.innerHTML = data.items.map(item => {
-    const id = item.snippet.resourceId.videoId;
-    const title = item.snippet.title;
-    const thumb = item.snippet.thumbnails.medium.url;
-    return `
-      <a href="https://youtube.com/watch?v=${id}" target="_blank" class="yt-card">
-        <img src="${thumb}" alt="${title}">
-        <div class="yt-title">${title}</div>
-      </a>
-    `;
-  }).join('');
-})();
-</script>
-
+        <!-- CORREÇÃO AQUI: class duplicada removida -->
+        <div class="videos scroll-anim">
+            <div id="yt-feed">Carregando vídeos...</div>
         </div>
-       <img src="estilos/Imagens/capalogo.png" alt="">
-    
+       <section id="sobre-clan" class="scroll-anim">
+  <div class="sobre-clan-content">
+    <h2>Sobre o Clash City BR</h2>
+    <p>
+      O Clash City BR é um clã ativo e consolidado dentro do Clash of Clans, presente no jogo desde 2017. Mantemos uma base sólida formada por jogadores experientes e dedicados, sempre buscando evolução individual e coletiva.
+    </p>
+
+    <p>
+      Contamos com um grupo organizado no WhatsApp, onde alinhamos ataques, estratégias e avisos importantes. Também estamos presentes no YouTube e no Instagram (@ClashCityBR), criando conteúdo, compartilhando defesas, ataques e novidades do clã.
+    </p>
+
+    <p>
+     Temos uma equipe forte, com bons players que mantêm o clã ativo diariamente.Alguns deles são: Carlos Daniel, Zaga-0, Dking Bacon, Kyros, Souza, Victor Hugo, Weller, Rafael, Xicó, Nettim, xFrozen, Rayleigh, Ozymandias, Amanda, J.Couto, Crâne Chasseur entre outros.
+    </p>
+    <p>Nosso objetivo é continuar crescendo como comunidade, mantendo o respeito entre os membros, ajudando novos jogadores e incentivando o desenvolvimento de todos. Aqui, vitória e diversão caminham juntas — sempre com o espírito de união que representa o Clash City BR.</p>
+  </div>
+</section>
+
+        <img src="estilos/Imagens/Perfil_COC-removebg-preview.png" alt="Logo Clash City BR">
     </aside>
+
     <footer id="rodape">
-        <p>© 2025 Clash City BR</p>
-        <a href="https://wa.me/31995312787" target="_blank"><img class="social" src="estilos/Imagens/whatsapp.png"
-                alt="wpp"></a>
-        <a href="https://www.instagram.com/clashcitybr/" target="_blank"><img class="social" src="estilos/Imagens/Instagram_icon.png"
-                alt="insta"></a>
+        <p>© 2025 Clash City BR</p>
+
+        <a href="https://wa.me/31995312787" target="_blank">
+            <img class="social" src="estilos/Imagens/whatsapp.png" alt="WhatsApp">
+        </a>
+
+        <a href="https://www.instagram.com/clashcitybr/" target="_blank">
+            <img class="social" src="estilos/Imagens/Instagram_icon.png" alt="Instagram">
+        </a>
+
         <a href="https://www.youtube.com/@clashcitybr/videos" target="_blank">
-            <img class="social"
-                src="estilos/Imagens/youtube-logo-youtube-logo-transparent-youtube-icon-transparent-free-free-png.webp"
-                alt="youtube"></a>
-                <div id="linksf">
-                    <p><a href="privacidade.html" target="_blank">Politíca de Privacidade</a></p>
-                    <p><a href="termos.html" target="_blank">Termos de Uso</a></p>
-                </div>
+            <img class="social" src="estilos/Imagens/youtube-logo-youtube-logo-transparent-youtube-icon-transparent-free-free-png.webp" alt="YouTube">
+        </a>
+
+        <div id="linksf">
+            <p><a href="privacidade.html" target="_blank">Política de Privacidade</a></p>
+            <p><a href="termos.html" target="_blank">Termos de Uso</a></p>
+        </div>
     </footer>
+
+    <!-- Animação Scroll -->
     <script>
+        const items = document.querySelectorAll('.scroll-anim');
 
-const items = document.querySelectorAll('.scroll-anim');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.15 });
-
-items.forEach(el => observer.observe(el));
-
+        items.forEach(el => observer.observe(el));
     </script>
 
+    <!-- YouTube API + Animação -->
+    <script>
+        (async () => {
+            const API_KEY = "AIzaSyAWy3Q4h0Eh245q6lk3kP5ZRiNaM5Dift8";
+            const uploadsPlaylist = "UUgkNsyyubsCR4GRWI0Mw5yQ";
+            const MAX = 4;
+
+            const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${uploadsPlaylist}&maxResults=${MAX}&key=${API_KEY}`;
+            const res = await fetch(url);
+            const data = await res.json();
+
+            const feed = document.getElementById("yt-feed");
+
+            if (!data.items) {
+                feed.textContent = "Erro ao carregar vídeos.";
+                console.error(data);
+                return;
+            }
+
+            feed.innerHTML = data.items.map(item => {
+                const id = item.snippet.resourceId.videoId;
+                const title = item.snippet.title;
+                const thumb = item.snippet.thumbnails.medium.url;
+
+                return `
+                    <a href="https://youtube.com/watch?v=${id}" target="_blank" class="yt-card">
+                        <img src="${thumb}" alt="${title}">
+                        <div class="yt-title">${title}</div>
+                    </a>
+                `;
+            }).join("");
+
+            setTimeout(() => {
+                document.querySelectorAll(".yt-card").forEach((card, i) => {
+                    card.style.transitionDelay = `${i * 0.15}s`;
+                    card.classList.add("show");
+                });
+            }, 100);
+        })();
+    </script>
 
 </body>
 
 </html>
- 
