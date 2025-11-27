@@ -3,220 +3,224 @@
 /* ============================
    TELAS GRANDES (a partir de 601px)
 ============================ */
+:root {
+    --cor0: #6aa5ed;
+    --cor1: #f0c424;
+    --cor2: #ffffff;
+    --cor3: #077187;
+    --cor4: #11032c;
+}
+
 @media only screen and (min-width: 601px) {
 
-body {
-    margin: 0;
-}
-
-/* Fade padrão */
-.fade-up {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeUp 0.8s ease forwards;
-}
-
-@keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    body {
+        margin: 0;
     }
-}
 
-header {
-    height: 80vh;
-    padding: 40px;
-}
+    /* Fade padrão */
+    .fade-up {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeUp 0.8s ease forwards;
+    }
 
-header > p {
-    padding: 20px;
-    font-size: 1.2em;
-    margin-top: 20px;
-}
+    @keyframes fadeUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 
-header > #junte {
-    margin-top: 40px;
-}
+    header {
+        height: 80vh;
+        padding: 40px;
+    }
 
-/* Clans */
-article > .clans {
-    margin: auto;
-    width: 40vw;
-    margin-top: 20px;
-    margin-bottom: 50px;
-}
+    header>p {
+        padding: 20px;
+        font-size: 1.2em;
+        margin-top: 20px;
+    }
 
-.clash1, .clash2, .clash3 {
-    width: 40vw;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    header>#junte {
+        margin-top: 40px;
+    }
 
-/* Botões */
-button {
-    transition: transform 0.2s, background 0.2s;
-}
+    /* Clans */
+    article>.clans {
+        margin: auto;
+        width: 40vw;
+        margin-top: 20px;
+        margin-bottom: 50px;
+    }
 
-button:hover {
-    transform: scale(1.1);
-    background: #ffd34c;
-}
+    .clash1,
+    .clash2,
+    .clash3 {
+        width: 40vw;
+        margin-bottom: 20px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-/* Scroll Anim */
-.scroll-anim {
-    opacity: 0;
-    --scroll-tr: translateY(40px);
-    --hover-scale: scale(1);
-    transform: var(--scroll-tr) var(--hover-scale);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
+    /* Botões */
+    button {
+        transition: transform 0.2s, background 0.2s;
+    }
 
-.scroll-anim.show {
-    opacity: 1;
-    --scroll-tr: translateY(0);
-}
+    button:hover {
+        transform: scale(1.1);
+        background: #ffd34c;
+    }
 
-/* Hover Clans */
-.clash1:hover, .clash2:hover, .clash3:hover {
-    --hover-scale: scale(1.03);
-    transform: translateY(-10px) var(--hover-scale);
-    cursor: pointer;
-    box-shadow: 0px 10px 20px rgba(0,0,0,0.4);
-}
-#videosdestaque {
-  font-size: 2em;
-  padding: 20px;
-  margin-bottom: 70px;
-}
-/* ============================
+    /* Scroll Anim */
+    .scroll-anim {
+        opacity: 0;
+        --scroll-tr: translateY(40px);
+        --hover-scale: scale(1);
+        transform: var(--scroll-tr) var(--hover-scale);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .scroll-anim.show {
+        opacity: 1;
+        --scroll-tr: translateY(0);
+    }
+
+    /* Hover Clans */
+    .clash1:hover,
+    .clash2:hover,
+    .clash3:hover {
+        --hover-scale: scale(1.03);
+        transform: translateY(-10px) var(--hover-scale);
+        cursor: pointer;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    #videosdestaque {
+        font-size: 2em;
+        padding: 20px;
+        margin-bottom: 70px;
+    }
+
+    /* ============================
    EFEITO MODERNO DO YT
 ============================ */
 
-/* Estado inicial */
-.yt-card {
-    text-decoration: none;
-    color: white;
-    width: 200px;
+    /* Estado inicial */
+    .yt-card {
+        text-decoration: none;
+        color: white;
+        width: 200px;
 
-    opacity: 0;
-    transform: scale(0.85);
-    filter: blur(10px);
+        opacity: 0;
+        transform: scale(0.85);
+        filter: blur(10px);
 
-    border-radius: 14px;
-    overflow: hidden;
+        border-radius: 14px;
+        overflow: hidden;
 
-    transition:
-        opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-        transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-        filter 0.9s ease;
-}
-
-/* Quando o JS adiciona .show */
-.yt-card.show {
-    opacity: 1;
-    transform: scale(1);
-    filter: blur(0);
-}
-
-/* Hover */
-.yt-card:hover {
-    transform: scale(1.07);
-    box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.45);
-    border-radius: 18px;
-}
-
-/* Imagem */
-.yt-card img {
-    width: 90%;
-    display: block;
-}
-
-/* Título */
-.yt-title {
-    padding: 8px;
-    font-size: 1em;
-    font-weight: bold;
-    text-align: center;
-}
-/* ===== SEÇÃO SOBRE O CLÃ ===== */
-#sobre-clan {
-
-    width: 90%;
-    max-width: 1100px;
-    margin: 120px auto;
-    padding: 45px 30px;
-
-    background: rgba(0, 0, 0, 0.45);
-    border-radius: 22px;
-    position: relative;
-
-    border: 2px solid rgba(0, 150, 255, 0.6);
-    box-shadow:
-        0 0 20px rgba(0, 150, 255, 0.5),
-        inset 0 0 15px rgba(0, 150, 255, 0.2);
-
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
-    animation: neonPulse 3.5s infinite ease-in-out;
-
-    text-align: center;
-
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.9s ease, transform 0.9s ease;
-}
-
-#sobre-clan.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Título */
-#sobre-clan h2 {
-    color: #f9f9f9;
-    font-size: 2.4em;
-    margin-bottom: 20px;
-    text-shadow: 0 0 15px #00a8ff;
-margin-top: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-}
-
-/* Ícone do título */
-#sobre-clan h2::before {
-    content: "⚔️";
-    font-size: 1.1em;
-}
-
-/* Texto */
-#sobre-clan p {
-    color: #ffffff;
-    font-size: 1.15em;
-    line-height: 1.75em;
-    margin-bottom: 18px;
-    text-shadow: 0 0 4px black;
-}
-
-/* Pulse neon */
-@keyframes neonPulse {
-    0%, 100% {
-        box-shadow:
-            0 0 20px rgba(0, 150, 255, 0.5),
-            inset 0 0 15px rgba(0, 150, 255, 0.2);
-    }
-    50% {
-        box-shadow:
-            0 0 30px rgba(0, 150, 255, 0.9),
-            inset 0 0 22px rgba(0, 150, 255, 0.4);
+        transition:
+            opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+            transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+            filter 0.9s ease;
     }
 
-}
-img{
-    width: 30vw;
-}
+    /* Quando o JS adiciona .show */
+    .yt-card.show {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+
+    /* Hover */
+    .yt-card:hover {
+        transform: scale(1.07);
+        box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.45);
+        border-radius: 18px;
+    }
+
+    /* Imagem */
+    .yt-card img {
+        width: 90%;
+        display: block;
+    }
+
+    /* Título */
+    .yt-title {
+        padding: 8px;
+        font-size: 1em;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    /* ===== SEÇÃO SOBRE O CLÃ ===== */
+    #sobre-clan {
+        width: 100%;
+        background: url(Imagens/offers-section-bottom.53b44802.png);
+        text-align: center;
+    }
+
+    .conteudo {
+        width: 60vw;
+        background-color: var(--cor);
+        margin: auto;
+    }
+
+    #sobre-clan.show {
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+
+    /* Título */
+    #sobre-clan h2 {
+        color: #f9f9f9;
+        font-size: 2.4em;
+        margin-bottom: 20px;
+        text-shadow: 0 0 15px #00a8ff;
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    /* Ícone do título */
+    #sobre-clan h2::before {
+        content: "⚔️";
+        font-size: 1.1em;
+    }
+
+    /* Texto */
+    #sobre-clan p {
+        color: #ffffff;
+        font-size: 1.15em;
+        line-height: 1.75em;
+        margin-bottom: 18px;
+        text-shadow: 0 0 4px black;
+    }
+
+    /* Pulse neon */
+    @keyframes neonPulse {
+
+        0%,
+        100% {
+            box-shadow:
+                0 0 20px rgba(0, 150, 255, 0.5),
+                inset 0 0 15px rgba(0, 150, 255, 0.2);
+        }
+
+        50% {
+            box-shadow:
+                0 0 30px rgba(0, 150, 255, 0.9),
+                inset 0 0 22px rgba(0, 150, 255, 0.4);
+        }
+
+    }
+
+    img {
+        width: 30vw;
+    }
 }
 
 /* ============================
@@ -224,44 +228,46 @@ img{
 ============================ */
 @media only screen and (min-width: 891px) {
 
-header {
-    height: 70vh;
-}
+    header {
+        height: 70vh;
+    }
 
-header > p#junte {
-    font-size: 1.8em;
-    padding: 100px;
-}
+    header>p#junte {
+        font-size: 1.8em;
+        padding: 100px;
+    }
 
-article > .clans {
-    width: 30vw;
-}
+    article>.clans {
+        width: 30vw;
+    }
 
-.clash1, .clash2, .clash3 {
-    width: 30vw;
-}
+    .clash1,
+    .clash2,
+    .clash3 {
+        width: 30vw;
+    }
 
-/* Feed YT */
-#yt-feed {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
+    /* Feed YT */
+    #yt-feed {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-.yt-card {
-    width: 350px;
-}
+    .yt-card {
+        width: 350px;
+    }
 
-.yt-card img {
-    border-radius: 8px;
-}
+    .yt-card img {
+        border-radius: 8px;
+    }
 
-.yt-title {
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 4px;
-}
+    .yt-title {
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 4px;
+    }
 
 }
 
@@ -270,43 +276,45 @@ article > .clans {
 ============================ */
 @media only screen and (min-width: 992px) {
 
-header {
-    height: 70vh;
-}
+    header {
+        height: 70vh;
+    }
 
-header > p#junte {
-    font-size: 1.8em;
-    padding: 100px;
-}
+    header>p#junte {
+        font-size: 1.8em;
+        padding: 100px;
+    }
 
-article > .clans {
-    width: 30vw;
-}
+    article>.clans {
+        width: 30vw;
+    }
 
-.clash1, .clash2, .clash3 {
-    width: 30vw;
-}
+    .clash1,
+    .clash2,
+    .clash3 {
+        width: 30vw;
+    }
 
-#yt-feed {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
+    #yt-feed {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-.yt-card {
-    width: 350px;
-}
+    .yt-card {
+        width: 350px;
+    }
 
-.yt-card img {
-    border-radius: 8px;
-}
+    .yt-card img {
+        border-radius: 8px;
+    }
 
-.yt-title {
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 4px;
-}
+    .yt-title {
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 4px;
+    }
 
 }
 
@@ -315,46 +323,48 @@ article > .clans {
 ============================ */
 @media only screen and (min-width: 1523px) {
 
-header {
-    height: 70vh;
-}
+    header {
+        height: 70vh;
+    }
 
-header > p#junte {
-    font-size: 1.8em;
-    padding: 100px;
-}
+    header>p#junte {
+        font-size: 1.8em;
+        padding: 100px;
+    }
 
-article > .clans {
-    width: 30vw;
-}
+    article>.clans {
+        width: 30vw;
+    }
 
-.clash1, .clash2, .clash3 {
-    width: 30vw;
-}
+    .clash1,
+    .clash2,
+    .clash3 {
+        width: 30vw;
+    }
 
-.videos {
-    padding-bottom: 20px;
-}
+    .videos {
+        padding-bottom: 20px;
+    }
 
-#yt-feed {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
+    #yt-feed {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-.yt-card {
-    width: 350px;
-}
+    .yt-card {
+        width: 350px;
+    }
 
-.yt-card img {
-    border-radius: 8px;
-}
+    .yt-card img {
+        border-radius: 8px;
+    }
 
-.yt-title {
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 4px;
-}
+    .yt-title {
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 4px;
+    }
 
 }

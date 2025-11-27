@@ -8,8 +8,8 @@
 }
 
 :root {
-    --cor0: #9F87AF;
-    --cor1: #f0b469;
+    --cor0: #6aa5ed;
+    --cor1: #f0c424;
     --cor2: #ffffff;
     --cor3: #077187;
     --cor4: #11032c;
@@ -176,23 +176,28 @@ ul #controle {
 
 /* ASIDE / VÍDEOS DESTAQUE */
 aside {
-    background-image: url(Imagens/fundo1.jpg);
+    background-image: url(Imagens/plamofundo.avif);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: left;
-    padding: 40px 10px 20px 10px;
+    padding: 40px 0px 20px 0px;
     color: var(--cor2);
     text-align: center;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.344);
 }
-
+aside h2{
+    
+    margin-bottom: 50px;
+}
 .videos {
     margin: 20px;
     padding-bottom: 30%;
     position: relative;
     border-radius: 20px;
     height: 40vh;
+    margin-bottom: 200px;
 }
+
 
 .videos > iframe {
     position: absolute;
@@ -201,8 +206,18 @@ aside {
     transform: translate(-50%, -50%);
     width: 80%;
     height: 90%;
-}
 
+}.sobre-clan-content {
+    background-image: linear-gradient(to top, var(--cor4),var(--cor0));
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 100px;
+    
+  
+}
+.sobre-clan-content h2, p {
+    padding: 40px;
+}
 /* Imagens genéricas no mobile */
 img {
     max-width: 100%;
