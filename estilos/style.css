@@ -141,7 +141,7 @@ button:hover {
 /* ===== SEÇÃO SOBRE O CLÃ ===== */
 #sobre-clan {
 
-    width: 100%;
+    width: 90%;
     max-width: 1100px;
     margin: 120px auto;
     padding: 45px 30px;
@@ -213,7 +213,10 @@ margin-top: 40px;
             inset 0 0 22px rgba(0, 150, 255, 0.4);
     }
 
-
+}
+img{
+    width: 30vw;
+}
 }
 
 /* ============================
