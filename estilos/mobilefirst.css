@@ -219,8 +219,8 @@ aside h2{
     padding: 40px;
 }
 /* Imagens genéricas no mobile */
-img {
-    max-width: 100%;
+img#logo {
+    max-width: 60%;
     height: auto;
 }
 

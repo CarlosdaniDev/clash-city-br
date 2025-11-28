@@ -177,7 +177,7 @@
         color: #f9f9f9;
         font-size: 2.4em;
         margin-bottom: 20px;
-        text-shadow: 0 0 15px #00a8ff;
+        text-shadow: 1 1 10px #0000008f;
         margin-top: 40px;
         display: flex;
         align-items: center;
@@ -246,6 +246,9 @@
     .clash3 {
         width: 30vw;
     }
+    #sobre-clan {
+        margin-top: 400px;
+    }
 
     /* Feed YT */
     #yt-feed {
@@ -294,7 +297,9 @@
     .clash3 {
         width: 30vw;
     }
-
+ #sobre-clan {
+        margin-top: -150px;
+    }
     #yt-feed {
         display: flex;
         gap: 16px;
@@ -345,7 +350,9 @@
     .videos {
         padding-bottom: 20px;
     }
-
+ #sobre-clan {
+        margin-top: 200px;
+    }
     #yt-feed {
         display: flex;
         gap: 16px;
