@@ -4,196 +4,350 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Família Clash City BR</title>
+    <title>Clash City BR - Família de Clãs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #f9d246;
+            --secondary: #077187;
+            --dark: #11032c;
+            --light: #ffffff;
+            --accent: #6aa5ed;
+            --glass: rgba(255, 255, 255, 0.92);
+        }
 
-    <link rel="shortcut icon" href="estilos/Imagens/Perfil_COC-removebg-preview.png" type="image/x-icon">
-    <link rel="stylesheet" href="estilos/mobilefirst.css">
-    <link rel="stylesheet" href="estilos/style.css">
-    <link rel="stylesheet" href="estilos/paisagem.css" media="screen and (orientation: landscape)">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lexend', sans-serif;
+            background-color: #f0f2f5;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* --- HEADER --- */
+        header {
+            height: 80vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('estilos/Imagens/inicio.jpg') center/cover no-repeat fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        header h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+        }
+
+        header p {
+            max-width: 700px;
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        /* --- CLANS SECTION --- */
+        .clans-section {
+            padding: 80px 5%;
+            background: linear-gradient(to bottom, #e0eafc, #cfdef3);
+        }
+
+        .clans-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        .clan-card {
+            background: var(--glass);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .clan-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-12px) scale(1.02);
+        }
+
+        .clan-card img {
+            width: 120px;
+            margin-bottom: 20px;
+        }
+
+        .clan-card h3 {
+            color: var(--secondary);
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+        }
+
+        .clan-card ul {
+            list-style: none;
+            margin: 20px 0;
+            text-align: left;
+            display: inline-block;
+        }
+
+        .clan-card li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .clan-card li::before {
+            content: "⚡";
+            margin-right: 8px;
+        }
+
+        .btn-join {
+            display: block;
+            background: var(--primary);
+            color: var(--dark);
+            padding: 12px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 800;
+            transition: background 0.3s;
+        }
+
+        .btn-join:hover {
+            background: #077187;
+            color: white;
+        }
+
+        /* --- YOUTUBE SECTION (ATUALIZADA) --- */
+        .video-section {
+            padding: 60px 5%;
+            background: var(--secondary);
+            color: white;
+            text-align: center;
+        }
+
+        .video-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 40px auto 0;
+        }
+
+        .video-item {
+            flex: 1 1 45%;
+            max-width: 560px;
+            aspect-ratio: 16 / 9;
+            background: rgba(0,0,0,0.2);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .video-item iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* --- ABOUT SECTION --- */
+        .about-section {
+            padding: 100px 10%;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 50px;
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .about-content{ flex: 1; min-width: 300px; }
+        .about-content h2 { font-size: 2.5rem; color: var(--primary); margin-bottom: 20px; }
+        .about-content p { margin-bottom: 15px; opacity: 0.9; font-size: 1.1rem; }
+        .about-image { flex: 1; text-align: center; min-width: 300px; }
+        .about-image img { max-width: 80%; filter: drop-shadow(0 0 20px var(--secondary)); }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #000;
+            color: white;
+            padding: 40px 5%;
+            text-align: center;
+        }
+
+        .social-links { margin-bottom: 20px; }
+        .social-links img { width: 35px; margin: 0 10px; transition: 0.3s; }
+        .social-links img:hover { transform: translateY(-5px); }
+
+        /* --- ANIMATIONS --- */
+        .scroll-anim {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .scroll-anim.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .video-item { flex: 1 1 100%; }
+            header h1 { font-size: 2.5rem; }
+            nav { justify-content: center; }
+        }
+    </style>
 </head>
 
 <body>
 
     <nav>
-        <a href="#clans">Nossos Clãs</a>
+        <a href="https://carlosdanidev.github.io/liga/" target="_blank">Liga</a>
+        <a href="#clans">Clãs</a>
+        <a href="#videos">Vídeos</a>
+        <a href="#sobre">Sobre</a>
         <a href="#rodape">Contato</a>
+
     </nav>
 
     <header>
-        <h1 class="fade-up">Bem vindo à Família Clash City BR</h1>
-
-        <p class="fade-up">
-            No CLASH CITY BR, a união faz a força! Aqui, amizade e evolução andam lado a lado,
-            tornando cada batalha mais épica.
-        </p>
-
-        <p id="junte" class="fade-up">
-            Junte-se a nós e cresça junto com o clã!
-        </p>
+        <h1 class="scroll-anim">Família Clash City BR</h1>
+        <p class="scroll-anim">União, estratégia e evolução desde 2017. Junte-se a uma comunidade ativa e conquiste o topo conosco!</p>
     </header>
 
-    <article>
-        <h2 id="clans" class="scroll-anim">Nossos Clãs</h2>
-
-        <div class="clans">
-
-            <div class="clash1 scroll-anim">
+    <section id="clans" class="clans-section">
+        <h2 style="text-align:center; font-size: 2.5rem;" class="scroll-anim">Nossos Clãs</h2>
+        <div class="clans-container">
+            <div class="clan-card scroll-anim">
+                <img src="estilos/Imagens/Clashcity.png" alt="Clash City BR">
                 <h3>CLASH CITY BR</h3>
-                <img src="estilos/Imagens/Clashcity.png" alt="Clã Clash City BR">
-                <p>Clã principal - Nível 21</p>
-
+                <p><strong>Clã Principal</strong></p>
                 <ul>
-                    <li id="trofeus">Troféus mínimos: 2000</li>
-                    <li id="guerra">Guerra frequente</li>
-                    <li id="controle">Jogadores ativos</li>
+                    <li>Troféus: 2000+</li>
+                    <li>Guerra Frequente</li>
+                    <li>Vagas Limitadas</li>
                 </ul>
-
-                <a href="https://link.clashofclans.com/pt?action=OpenClanProfile&tag=GUPJU0L2" target="_blank">
-                    <button>Solicitar Entrada</button>
-                </a>
+                <a href="https://link.clashofclans.com/pt?action=OpenClanProfile&tag=GUPJU0L2" class="btn-join">Solicitar Entrada</a>
             </div>
 
-            <div class="clash2 scroll-anim">
+            <div class="clan-card scroll-anim">
+                <img src="estilos/Imagens/clashcitybr2.png" alt="Clash City BR 2">
                 <h3>CLASH CITY BR 2</h3>
-                <img src="estilos/Imagens/clashcitybr2.png" alt="Clã Clash City BR 2">
-                <p>Clã secundário - Nível 10</p>
-
+                <p><strong>Secundário</strong></p>
                 <ul>
-                    <li id="trofeus">Troféus mínimos: 1000</li>
-                    <li id="guerra">Guerra frequente</li>
-                    <li id="controle">Foco em desenvolvimento</li>
+                    <li>Troféus: 1000+</li>
+                    <li>Foco em Evolução</li>
+                    <li>Guerra Constante</li>
                 </ul>
-
-                <a href="https://link.clashofclans.com/pt?action=OpenClanProfile&tag=2LQY9RYV0" target="_blank">
-                    <button>Solicitar Entrada</button>
-                </a>
+                <a href="https://link.clashofclans.com/pt?action=OpenClanProfile&tag=2LQY9RYV0" class="btn-join">Solicitar Entrada</a>
             </div>
 
-            <div class="clash3 scroll-anim">
+            <div class="clan-card scroll-anim">
+                <img src="estilos/Imagens/clashcitybr2.png" alt="Clash City BR 3">
                 <h3>CLASH CITY BR 3</h3>
-                <img src="estilos/Imagens/clashcitybr2.png" alt="Clã Clash City BR 3">
-                <p>Clã terciário - Nível 10</p>
-
+                <p><strong>Academia</strong></p>
                 <ul>
-                    <li id="trofeus">Troféus mínimos: 800</li>
-                    <li id="guerra">Guerra frequente</li>
-                    <li id="controle">Aberto a novatos</li>
+                    <li>Troféus: 800+</li>
+                    <li>Aberto a Novatos</li>
+                    <li>Dicas e Treino</li>
                 </ul>
-
-                <a href="https://link.clashofclans.com/pt?action=OpenClanProfile&tag=2JY8QGQC8" target="_blank">
-                    <button>Solicitar Entrada</button>
-                </a>
+                <a href="https://link.clashofclans.com/pt?action=OpenClanProfile&tag=2JY8QGQC8" class="btn-join">Solicitar Entrada</a>
             </div>
-
         </div>
-    </article>
+    </section>
 
-    <aside>
-        <h2 class="scroll-anim" id="videosdestaque">Vídeos em Destaque</h2>
-
-        <!-- CORREÇÃO AQUI: class duplicada removida -->
-        <div class="videos scroll-anim">
-            <div id="yt-feed">Carregando vídeos...</div>
+    <section id="videos" class="video-section">
+        <h2 class="scroll-anim">Vídeos em Destaque</h2>
+        <div class="video-grid scroll-anim">
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/Rinc3K7NW-8?si=oPGjBiqZBOcdyVF2" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/BI_p0ctWxn8?si=1kl0nDFxPgXjE575" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/CetQipgNnRI?si=B9SgGTMyZLBwZ826" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/y--JgClUGt0?si=ILgGNMsViihYfZjd" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
         </div>
-       <section id="sobre-clan" class="scroll-anim">
-  <div class="sobre-clan-content">
-    <div class="conteudo">
-        <h2>Sobre o Clash City BR</h2>
-        <p>
-          O Clash City BR é um clã ativo e consolidado dentro do Clash of Clans, presente no jogo desde 2017. Mantemos uma base sólida formada por jogadores experientes e dedicados, sempre buscando evolução individual e coletiva.
-        </p>
-        <p>
-          Contamos com um grupo organizado no WhatsApp, onde alinhamos ataques, estratégias e avisos importantes. Também estamos presentes no YouTube e no Instagram (@ClashCityBR), criando conteúdo, compartilhando defesas, ataques e novidades do clã.
-        </p>
-        <p>
-         Temos uma equipe forte, com bons players que mantêm o clã ativo diariamente. Alguns deles são: Carlos Daniel, Zaga-0, Dking Bacon, Kyros, Souza, Victor Hugo, Weller, Rafael, Xicó, Nettim, xFrozen, Rayleigh, Ozymandias, J.Couto, Crâne Chasseur entre outros.
-        </p>
-        <p>Nosso objetivo é continuar crescendo como comunidade, mantendo o respeito entre os membros, ajudando novos jogadores e incentivando o desenvolvimento de todos. Aqui, vitória e diversão caminham juntas — sempre com o espírito de união que representa o Clash City BR.</p>
-    </div>
-  </div>
-</section>
+    </section>
 
-        <img id="logo" src="estilos/Imagens/Perfil_COC-removebg-preview.png" alt="Logo Clash City BR">
-    </aside>
+    <section id="sobre" class="about-section">
+        <div class="about-content scroll-anim">
+            <h2>Sobre a Família</h2>
+            <p>O Clash City BR é um clã consolidado, presente no jogo desde 2017. Mantemos uma base sólida formada por jogadores experientes e dedicados.</p>
+            <p>Contamos com grupo organizado no WhatsApp para alinhamento de ataques e estratégias.</p>
+            <p><strong>Destaques do Clã:</strong> Carlos Daniel, Zaga-0, Dking Bacon, Kyros, Souza, Victor Hugo, Weller, Rafael, Nettim e veteranos.</p>
+        </div>
+        <div class="about-image scroll-anim">
+            <img src="estilos/Imagens/Perfil_COC-removebg-preview.png" alt="Logo Clash City">
+        </div>
+    </section>
 
     <footer id="rodape">
-        <p>© 2025 Clash City BR</p>
-
-        <a href="https://wa.me/31995312787" target="_blank">
-            <img class="social" src="estilos/Imagens/whatsapp.png" alt="WhatsApp">
-        </a>
-
-        <a href="https://www.instagram.com/clashcitybr/" target="_blank">
-            <img class="social" src="estilos/Imagens/Instagram_icon.png" alt="Instagram">
-        </a>
-
-        <a href="https://www.youtube.com/@clashcitybr/videos" target="_blank">
-            <img class="social" src="estilos/Imagens/youtube-logo-youtube-logo-transparent-youtube-icon-transparent-free-free-png.webp" alt="YouTube">
-        </a>
-
-        <div id="linksf">
-            <p><a href="privacidade.html" target="_blank">Política de Privacidade</a></p>
-            <p><a href="termos.html" target="_blank">Termos de Uso</a></p>
+        <div class="social-links">
+            <a href="https://wa.me/31995312787" target="_blank"><img src="estilos/Imagens/whatsapp.png" alt="WhatsApp"></a>
+            <a href="https://www.instagram.com/clashcitybr/" target="_blank"><img src="estilos/Imagens/Instagram_icon.png" alt="Instagram"></a>
+            <a href="https://www.youtube.com/@clashcitybr/videos" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
         </div>
+        <p>© 2026 Clash City BR - Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Animação Scroll -->
     <script>
-        const items = document.querySelectorAll('.scroll-anim');
-
+        // Animação de Scroll simplificada
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('show');
-                    observer.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.15 });
+        }, { threshold: 0.1 });
 
-        items.forEach(el => observer.observe(el));
+        document.querySelectorAll('.scroll-anim').forEach((el) => observer.observe(el));
     </script>
-
-    <!-- YouTube API + Animação -->
-    <script>
-        (async () => {
-            const API_KEY = "AIzaSyAWy3Q4h0Eh245q6lk3kP5ZRiNaM5Dift8";
-            const uploadsPlaylist = "UUgkNsyyubsCR4GRWI0Mw5yQ";
-            const MAX = 4;
-
-            const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${uploadsPlaylist}&maxResults=${MAX}&key=${API_KEY}`;
-            const res = await fetch(url);
-            const data = await res.json();
-
-            const feed = document.getElementById("yt-feed");
-
-            if (!data.items) {
-                feed.textContent = "Erro ao carregar vídeos.";
-                console.error(data);
-                return;
-            }
-
-            feed.innerHTML = data.items.map(item => {
-                const id = item.snippet.resourceId.videoId;
-                const title = item.snippet.title;
-                const thumb = item.snippet.thumbnails.medium.url;
-
-                return `
-                    <a href="https://youtube.com/watch?v=${id}" target="_blank" class="yt-card">
-                        <img src="${thumb}" alt="${title}">
-                        <div class="yt-title">${title}</div>
-                    </a>
-                `;
-            }).join("");
-
-            setTimeout(() => {
-                document.querySelectorAll(".yt-card").forEach((card, i) => {
-                    card.style.transitionDelay = `${i * 0.15}s`;
-                    card.classList.add("show");
-                });
-            }, 100);
-        })();
-    </script>
-
 </body>
 
 </html>
