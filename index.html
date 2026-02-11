@@ -28,36 +28,99 @@
             background-color: #f0f2f5;
             color: var(--dark);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* --- NAVIGATION --- */
+        /* --- NAVIGATION ATUALIZADA --- */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(10px);
-            z-index: 1000;
-            padding: 15px 5%;
+            z-index: 9999;
+            height: 70px;
             display: flex;
-            justify-content: flex-end;
-            gap: 20px;
+            align-items: center;
         }
 
-        nav a {
+        .nav-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-text {
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 1.2rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
             color: white;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             transition: color 0.3s;
         }
 
-        nav a:hover {
+        .nav-links a:hover {
             color: var(--primary);
         }
 
-        /* --- HEADER --- */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            z-index: 10000;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+
+        @media (max-width: 900px) {
+            .hamburger { display: block; }
+            .nav-links {
+                position: fixed;
+                right: -100%;
+                top: 0;
+                width: 75%;
+                height: 100vh;
+                background: var(--dark);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+            }
+            .nav-links.active { right: 0; }
+            .nav-links a { font-size: 1.2rem; margin: 15px 0; }
+            .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+            .hamburger.active span:nth-child(2) { opacity: 0; }
+            .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+        }
+
+        /* --- RESTANTE DO SEU CSS MANTIDO --- */
         header {
             height: 80vh;
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -83,7 +146,6 @@
             text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
         }
 
-        /* --- CLANS SECTION --- */
         .clans-section {
             padding: 80px 5%;
             background: linear-gradient(to bottom, #e0eafc, #cfdef3);
@@ -159,7 +221,6 @@
             color: white;
         }
 
-        /* --- YOUTUBE SECTION (ATUALIZADA) --- */
         .video-section {
             padding: 60px 5%;
             background: var(--secondary);
@@ -192,7 +253,6 @@
             border: none;
         }
 
-        /* --- ABOUT SECTION --- */
         .about-section {
             padding: 100px 10%;
             display: flex;
@@ -209,7 +269,6 @@
         .about-image { flex: 1; text-align: center; min-width: 300px; }
         .about-image img { max-width: 80%; filter: drop-shadow(0 0 20px var(--secondary)); }
 
-        /* --- FOOTER --- */
         footer {
             background: #000;
             color: white;
@@ -221,7 +280,6 @@
         .social-links img { width: 35px; margin: 0 10px; transition: 0.3s; }
         .social-links img:hover { transform: translateY(-5px); }
 
-        /* --- ANIMATIONS --- */
         .scroll-anim {
             opacity: 0;
             transform: translateY(30px);
@@ -236,7 +294,6 @@
         @media (max-width: 768px) {
             .video-item { flex: 1 1 100%; }
             header h1 { font-size: 2.5rem; }
-            nav { justify-content: center; }
         }
     </style>
 </head>
@@ -244,13 +301,23 @@
 <body>
 
     <nav>
-        <a href="https://clashcitybr.github.io/liga/">Liga</a>
-        <a href="#clans">Clãs</a>
-        <a href="https://clashcitybr.github.io/controle-cla/">Desempenho</a>
-        <a href="#videos">Vídeos</a>
-        <a href="#sobre">Sobre</a>
-        <a href="#rodape">Contato</a>
+        <div class="nav-container">
+            
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
+            <div class="nav-links" id="nav-links">
+                <a href="https://clashcitybr.github.io/liga/">Liga</a>
+                <a href="#clans">Clãs</a>
+                <a href="https://clashcitybr.github.io/controle-cla/">Desempenho</a>
+                <a href="#videos">Vídeos</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#rodape">Contato</a>
+            </div>
+        </div>
     </nav>
 
     <header>
@@ -270,7 +337,6 @@
                     <li>Liga: Mestre 1</li>
                     <li>Guerra Frequente</li>
                     <li>Vagas Limitadas</li>
-                    
                 </ul>
                 <a href="https://link.clashofclans.com/pt?action=OpenClanProfile&tag=GUPJU0L2" class="btn-join">Solicitar Entrada</a>
             </div>
@@ -284,7 +350,6 @@
                     <li>Liga: Mestre 1</li>
                     <li>Foco em Evolução</li>
                     <li>Usado para Ligas</li>
-                   
                 </ul>
                 <a href="https://link.clashofclans.com/pt?action=OpenClanProfile&tag=2LQY9RYV0" class="btn-join">Solicitar Entrada</a>
             </div>
@@ -298,7 +363,6 @@
                     <li>Liga: Mestre 2</li>
                     <li>Aberto a Novatos</li>
                     <li>Dicas e Treino</li>
-                   
                 </ul>
                 <a href="https://link.clashofclans.com/pt?action=OpenClanProfile&tag=2JY8QGQC8" class="btn-join">Solicitar Entrada</a>
             </div>
@@ -345,7 +409,36 @@
     </footer>
 
     <script>
-        // Animação de Scroll simplificada
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        // Abre/Fecha o menu ao clicar no botão
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // FECHA AO TOCAR EM QUALQUER LUGAR DA TELA
+        document.addEventListener('click', (e) => {
+            if (navLinks.classList.contains('active')) {
+                // Se o clique não foi no menu nem no botão hambúrguer, fecha
+                if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                }
+            }
+        });
+
+        // Fecha ao clicar em um link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Animação de Scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -353,9 +446,7 @@
                 }
             });
         }, { threshold: 0.1 });
-
         document.querySelectorAll('.scroll-anim').forEach((el) => observer.observe(el));
     </script>
 </body>
-
 </html>
